@@ -8,7 +8,7 @@ canvas.title("Music Player")
 canvas.geometry("500x500")
 canvas.config(bg = 'black')
 
-rootpath = "C:\\Users\Joshna\Desktop\songs"
+rootpath = "C:\\Emotion-Detection-Using-Facial-Recognition\songs"
 pattern = "*.mp3"
 
 mixer.init()
