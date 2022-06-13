@@ -1,6 +1,6 @@
 
 import tkinter as tk
-from tkinter import ttk
+from tkinter import END, ttk
 from tkinter.messagebox import showinfo
 import fnmatch
 import os
@@ -25,8 +25,10 @@ next_img = tk.PhotoImage(file = "next_img.png")
 pause_img = tk.PhotoImage(file = "pause_img.png")
 
 
+    
 
 def button_command():
+    listBox.delete(0,END)
     global rootpath
     text= em_entry.get()
     if text == 'happy':
@@ -75,12 +77,12 @@ def prev():
     listBox.select_set(next_song) 
 
 def pause():
-    #if pauseButton["text"] == "Pause":
+    if pauseButton["text"] == "Pause":
         mixer.music.pause()
-       # pauseButton["text"] = "Play"
-    #else:
-       # mixer.music.unpause()
-       # pauseButton["text"] = "Pause"      
+        pauseButton["text"] = "Play"
+    else:
+        mixer.music.unpause()
+        pauseButton["text"] = "Pause"      
 
 
         
@@ -92,7 +94,7 @@ em_entry = tk.Entry(canvas, font=('poppins',24), width =14,bg = 'grey', bd=7)
 em_entry.pack(pady = 2, side = 'top')
 
 
-emoButton = tk.Button(canvas, text='Submit',font = ('poppins', 14), bg = 'blue', borderwidth = 5, command = button_command )
+emoButton = tk.Button(canvas, text='SUBMIT',font = ('poppins', 14), bg = 'blue', borderwidth = 5, command = button_command )
 emoButton.pack(pady = 10, side = 'top')
 
 prevButton = tk.Button(canvas, image = prev_img, bg = 'black', borderwidth = 0, command = prev)
