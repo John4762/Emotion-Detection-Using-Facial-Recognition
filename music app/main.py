@@ -9,13 +9,13 @@ from pygame import mixer
 canvas = tk.Tk()
 canvas.title("Music Player")
 canvas.geometry("1600x1000")
-canvas.config(bg = 'white')
+canvas.config(bg = 'black')
 rootpath=''
 
-my_canvas= tk.Canvas(canvas,width=323,height = 576)
+#my_canvas= tk.Canvas(canvas,width=323,height = 576)
 
-hrootpath = "C:\\Users\Dell\Documents\Emotion-Detection-Using-Facial-Recognition\songs\happy"
-srootpath = "C:\\Users\Dell\Documents\Emotion-Detection-Using-Facial-Recognition\songs\sad"
+hrootpath = "C:\\Users\online\Desktop\Emotion\Emotion-Detection-Using-Facial-Recognition\songs\happy"
+srootpath = "C:\\Users\online\Desktop\Emotion\Emotion-Detection-Using-Facial-Recognition\songs\sad"
 pattern = "*.mp3"
 
 mixer.init()
@@ -30,7 +30,7 @@ pause_img = tk.PhotoImage(file = "pause_img.png")
 
 def button_command():
     global rootpath
-    text= un_entry.get()
+    text= em_entry.get()
     if text == 'happy':
        rootpath = hrootpath
        for root, dirs, files in os.walk(rootpath):
@@ -51,6 +51,7 @@ def select():
 
 def stop():
     mixer.music.stop()
+    label.config(text = "")
     listBox.select_clear('active') 
 
 def next():
@@ -86,39 +87,34 @@ def pause():
 
         
 
-top = tk.Frame(canvas, bg = "white")
+top = tk.Frame(canvas, bg = "black")
 top.pack(padx = 10, pady = 5, anchor = 'n')
 
-un_entry = tk.Entry(canvas, font=('poppins',24), width =14,bg = 'grey', bd=7)
-un_entry.pack(pady = 2, side = 'top')
+em_entry = tk.Entry(canvas, font=('poppins',24), width =14,bg = 'grey', bd=7)
+em_entry.pack(pady = 2, side = 'top')
 
 
 emoButton = tk.Button(canvas, text='Submit',font = ('poppins', 14), bg = 'blue', borderwidth = 5, command = button_command )
-emoButton.pack(pady = 2, side = 'top')
+emoButton.pack(pady = 10, side = 'top')
 
-prevButton = tk.Button(canvas, image = prev_img, bg = 'white', borderwidth = 0, command = prev)
+prevButton = tk.Button(canvas, image = prev_img, bg = 'black', borderwidth = 0, command = prev)
 prevButton.pack(pady = 15, in_ = top, side = 'left')
 
-stopButton = tk.Button(canvas, image = stop_img, bg = 'white', borderwidth = 0, command = stop)
+stopButton = tk.Button(canvas, image = stop_img, bg = 'black', borderwidth = 0, command = stop)
 stopButton.pack(pady = 15, in_ = top, side = 'left')
 
-pauseButton = tk.Button(canvas, image = pause_img, bg = 'white', borderwidth = 0, command = pause)
+pauseButton = tk.Button(canvas, image = pause_img, bg = 'black', borderwidth = 0, command = pause)
 pauseButton.pack(pady = 15, in_ = top, side = 'left')
 
-playButton = tk.Button(canvas, image = play_img, bg = 'white', borderwidth = 0, command = select)
+playButton = tk.Button(canvas, image = play_img, bg = 'black', borderwidth = 0, command = select)
 playButton.pack(pady = 15, in_ = top, side = 'left')
 
-nextButton = tk.Button(canvas,  image = next_img, bg = 'white', borderwidth = 0, command = next)
+nextButton = tk.Button(canvas,  image = next_img, bg = 'black', borderwidth = 0, command = next)
 nextButton.pack(pady = 15, in_ = top, side = 'left')
 
 listBox = tk.Listbox(canvas, fg = "yellow", bg = "purple", width = 300, font = ('poppins', 14))
 listBox.pack(padx = 15, pady = 10)
 label = tk.Label(canvas, text = '', bg = "black", fg = "cyan", font = ('poppins', 14))
 label.pack(pady = 15)
-
-
-
-
-
 
 canvas.mainloop()
