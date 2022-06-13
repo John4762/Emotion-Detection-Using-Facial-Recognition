@@ -12,8 +12,6 @@ canvas.geometry("1600x1000")
 canvas.config(bg = 'black')
 rootpath=''
 
-#my_canvas= tk.Canvas(canvas,width=323,height = 576)
-
 hrootpath = "C:\\Users\online\Desktop\Emotion\Emotion-Detection-Using-Facial-Recognition\songs\happy"
 srootpath = "C:\\Users\online\Desktop\Emotion\Emotion-Detection-Using-Facial-Recognition\songs\sad"
 pattern = "*.mp3"
@@ -77,12 +75,12 @@ def prev():
     listBox.select_set(next_song) 
 
 def pause():
-    if pauseButton["text"] == "Pause":
+    #if pauseButton["text"] == "Pause":
         mixer.music.pause()
-        pauseButton["text"] = "Play"
-    else:
-        mixer.music.unpause()
-        pauseButton["text"] = "Pause"      
+       # pauseButton["text"] = "Play"
+    #else:
+       # mixer.music.unpause()
+       # pauseButton["text"] = "Pause"      
 
 
         
@@ -103,7 +101,7 @@ prevButton.pack(pady = 15, in_ = top, side = 'left')
 stopButton = tk.Button(canvas, image = stop_img, bg = 'black', borderwidth = 0, command = stop)
 stopButton.pack(pady = 15, in_ = top, side = 'left')
 
-pauseButton = tk.Button(canvas, image = pause_img, bg = 'black', borderwidth = 0, command = pause)
+pauseButton = tk.Button(canvas, image = pause_img, text="Pause", bg = 'black', borderwidth = 0, command = pause)
 pauseButton.pack(pady = 15, in_ = top, side = 'left')
 
 playButton = tk.Button(canvas, image = play_img, bg = 'black', borderwidth = 0, command = select)
