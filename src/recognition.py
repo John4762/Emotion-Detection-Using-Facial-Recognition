@@ -15,18 +15,17 @@ id = 0
 # Emotions related to ids: example ==> Anger: id=0,  etc
 names = ['Happy', 'Sad', 'None', 'None', 'None', 'None'] 
 
-# Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
-cam.set(3, 640) # set video widht
+cam.set(3, 640) # set video width
 cam.set(4, 480) # set video height
 
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
 
-# ret, img =cam.read()
-img = cv2.imread("C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/happypic.jpg")
-# img = cv2.flip(img, -1) # Flip vertically
+#ret, img =cam.read()
+img = cv2.imread("C:/Users/hp/Downloads/john.jpg")
+#img = cv2.flip(img, 0) # Flip vertically
 
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
@@ -52,9 +51,9 @@ for(x,y,w,h) in faces:
         confidence = "  {0}%".format(round(100 - confidence))
     
     cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
-    cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
+   # cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
 
-cv2.imwrite("C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/generated_happypic.jpg",img) 
+cv2.imwrite("C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/jithin.jpg",img) 
 
 print("\n [INFO] Done detecting and Image is saved")
 cam.release()
