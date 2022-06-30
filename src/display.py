@@ -1,8 +1,10 @@
 import cv2
 import matplotlib.pyplot as plt
 
+from file_selector import file_select
 
-image = cv2.imread("C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/jithin.jpg")
+pic=file_select()
+image = cv2.imread(pic)
 height, width = image.shape[:2]
 resized_image = cv2.resize(image,(3*width, 3*height), interpolation = cv2.INTER_CUBIC)
 
