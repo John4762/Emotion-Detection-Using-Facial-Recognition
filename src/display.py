@@ -1,5 +1,7 @@
 import cv2
 import matplotlib.pyplot as plt
+import os
+from path_generalizer import path_finder
 
 from file_selector import file_select
 

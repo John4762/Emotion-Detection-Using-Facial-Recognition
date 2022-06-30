@@ -9,5 +9,3 @@ def file_select():
     print(file_path)
  
     return file_path
- 
-

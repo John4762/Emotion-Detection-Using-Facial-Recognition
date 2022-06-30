@@ -1,5 +1,9 @@
-import cv2
+import os
 
+import cv2
+from path_generalizer import path_finder
+
+path_1=os.path.join(path_finder(),"happy.txt")
 with open('C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/happy.txt','r') as f:
     images = [line.strip() for line in f]
 
