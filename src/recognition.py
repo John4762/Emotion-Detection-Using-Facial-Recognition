@@ -1,21 +1,12 @@
-
-from os import path
 import cv2
 import numpy as np
-from file_selector import file_select
+import os
 
-from path_generalizer import path_finder
-
-x=path_finder()
-p1=path.join(x,'trainer','trainer.yml')
-#toCheck
-print(p1)
+from file_selector import file_select 
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read(p1)
-cascadePath = path.join(x,'haarcascade_frontalface_default.xml')
-#toCheck
-print(cascadePath)
+recognizer.read('C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml')
+cascadePath = "C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -65,11 +56,7 @@ for(x,y,w,h) in faces:
     cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
    # cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
 
-
-p2=file_select()
-#toCheck
-
-cv2.imwrite(p2,img) 
+cv2.imwrite("C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/generated_pic.jpg",img) 
 
 print("\n [INFO] Done detecting and Image is saved")
 cam.release()
