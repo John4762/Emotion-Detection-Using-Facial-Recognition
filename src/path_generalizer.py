@@ -4,3 +4,4 @@ def path_finder():
     fn = Path(__file__).parent 
     print(fn)
     return fn
+
