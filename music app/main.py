@@ -12,17 +12,17 @@ canvas.geometry("1600x1000")
 canvas.config(bg = 'black')
 rootpath=''
 
-hrootpath = "C:\\Users\online\Desktop\Emotion\Emotion-Detection-Using-Facial-Recognition\songs\happy"
-srootpath = "C:\\Users\online\Desktop\Emotion\Emotion-Detection-Using-Facial-Recognition\songs\sad"
+hrootpath = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\songs\happy"
+srootpath = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\songs\sad"
 pattern = "*.mp3"
 
 mixer.init()
 
-prev_img = tk.PhotoImage(file = "prev_img.png")
-stop_img = tk.PhotoImage(file = "stop_img.png")
-play_img = tk.PhotoImage(file = "play_img.png")
-next_img = tk.PhotoImage(file = "next_img.png")
-pause_img = tk.PhotoImage(file = "pause_img.png")
+prev_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\prev_img.png")
+stop_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\stop_img.png")
+play_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\play_img.png")
+next_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\\next_img.png")
+pause_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\pause_img.png")
 
 
     
