@@ -14,3 +14,4 @@ fig.set_size_inches(18, 10)
 plt.axis("off")
 plt.imshow(cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB))
 plt.show()
+#checking
