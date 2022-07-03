@@ -29,6 +29,7 @@ def getImagesAndLabels(path):
             ids.append(id)
 
     return faceSamples,ids
+#oops    
 
 print ("\n [INFO] Training faces....")
 faces,ids = getImagesAndLabels(path)
