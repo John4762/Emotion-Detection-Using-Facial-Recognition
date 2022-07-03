@@ -18,11 +18,11 @@ pattern = "*.mp3"
 
 mixer.init()
 
-prev_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\prev_img.png")
-stop_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\stop_img.png")
-play_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\play_img.png")
-next_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\\next_img.png")
-pause_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detection-Using-Facial-Recognition\music app\pause_img.png")
+prev_img = tk.PhotoImage(file = "music app/prev_img.png")
+stop_img = tk.PhotoImage(file = "music app/stop_img.png")
+play_img = tk.PhotoImage(file = "music app/play_img.png")
+next_img = tk.PhotoImage(file = "music app/next_img.png")
+pause_img = tk.PhotoImage(file = "music app/pause_img.png")
 
 
     
@@ -30,13 +30,13 @@ pause_img = tk.PhotoImage(file = "C:\\Users\hp\OneDrive\Desktop\Emotion-Detectio
 def button_command():
     listBox.delete(0,END)
     global rootpath
-    text= em_entry.get()
-    if text == 'happy':
+    #text= em_entry.get()
+    if emotion_result == 'Happy':
        rootpath = hrootpath
        for root, dirs, files in os.walk(rootpath):
             for filename in fnmatch.filter(files, pattern):
                 listBox.insert('end', filename)
-    elif text == 'sad':
+    elif emotion_result == 'Sad':
         rootpath = srootpath
         for root, dirs, files in os.walk(rootpath):
             for filename in fnmatch.filter(files, pattern):
@@ -90,11 +90,12 @@ def pause():
 top = tk.Frame(canvas, bg = "black")
 top.pack(padx = 10, pady = 5, anchor = 'n')
 
-em_entry = tk.Entry(canvas, font=('poppins',24), width =14,bg = 'grey', bd=7)
-em_entry.pack(pady = 2, side = 'top')
-
-
-emoButton = tk.Button(canvas, text='SUBMIT',font = ('poppins', 14), bg = 'blue', borderwidth = 5, command = button_command )
+#em_entry = tk.Entry(canvas, font=('poppins',24), width =14,bg = 'grey', bd=7)
+#em_entry.pack(pady = 2, side = 'top')
+f = open("result.txt", "r")
+emotion_result=f.read()
+f.close()
+emoButton = tk.Button(canvas, text=emotion_result,font = ('poppins', 14), bg = 'blue', borderwidth = 5, command = button_command )
 emoButton.pack(pady = 10, side = 'top')
 
 prevButton = tk.Button(canvas, image = prev_img, bg = 'black', borderwidth = 0, command = prev)
