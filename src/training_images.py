@@ -4,10 +4,10 @@ from PIL import Image
 import os
 
 # Path for face image database
-path = 'C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/dataset'
+path = 'C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/dataset'
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-detector = cv2.CascadeClassifier("C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml");
+detector = cv2.CascadeClassifier("C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml");
 
 # function to get the images and label data
 def getImagesAndLabels(path):
@@ -29,13 +29,14 @@ def getImagesAndLabels(path):
             ids.append(id)
 
     return faceSamples,ids
+#oops    
 
 print ("\n [INFO] Training faces....")
 faces,ids = getImagesAndLabels(path)
 recognizer.train(faces, np.array(ids))
 
 # Save the model into trainer/trainer.yml
-recognizer.write('C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml') 
+recognizer.write('C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml') 
 
 # Print the numer of Emotions trained and end program
 print("\n [INFO] {0} Emotions trained. Exiting Program".format(len(np.unique(ids))))
