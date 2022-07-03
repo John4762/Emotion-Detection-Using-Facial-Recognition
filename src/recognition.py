@@ -5,8 +5,8 @@ import os
 from file_selector import file_select 
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml')
-cascadePath = "C:/Users/hp/OneDrive/Documents/GitHub/S6 MiniProject/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml"
+recognizer.read('C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml')
+cascadePath = "C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
