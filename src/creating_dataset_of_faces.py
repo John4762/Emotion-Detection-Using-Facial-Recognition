@@ -4,8 +4,8 @@ import cv2
 
 from path_generalizer import path_finder
 
-path_1=os.path.join(path_finder(),"happy.txt")
-with open('C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/happy.txt','r') as f:
+path_1=os.path.join(path_finder(),"sad.txt")
+with open('C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/sad.txt','r') as f:
     images = [line.strip() for line in f]
 
 face_detector = cv2.CascadeClassifier('C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml')
@@ -16,7 +16,7 @@ face_id = input('\n Enter Emotion id end press <return> ==>  ')
 count = 0
 
 for image in images:
-    img = cv2.imread("C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/data_set/happy/"+image)
+    img = cv2.imread("C:/Users/hp/OneDrive/Desktop/Emotion-Detection-Using-Facial-Recognition/src/data_set/sad/"+image)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_detector.detectMultiScale(gray, 1.3, 5)
 
