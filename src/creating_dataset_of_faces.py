@@ -1,9 +1,9 @@
 import cv2
 
-with open('E:/BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/happy.txt','r') as f:
+with open('src/happy.txt','r') as f:
     images = [line.strip() for line in f]
 
-face_detector = cv2.CascadeClassifier('E:/BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml')
+face_detector = cv2.CascadeClassifier('src/haarcascade_frontalface_default.xml')
 
 # For each Emotion, enter one numeric face id
 face_id = input('\n Enter Emotion id end press <return> ==>  ')
@@ -11,7 +11,7 @@ face_id = input('\n Enter Emotion id end press <return> ==>  ')
 count = 0
 
 for image in images:
-    img = cv2.imread("E://BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/data_set/happy/"+image)
+    img = cv2.imread("src/data_set/happy/"+image)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_detector.detectMultiScale(gray, 1.3, 5)
 
@@ -21,6 +21,6 @@ for image in images:
         count += 1
 
         # Save the captured image into the datasets folder
-        cv2.imwrite("E:/BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
+        cv2.imwrite("src/dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
 #0 for happy
 #1 for sad

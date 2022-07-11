@@ -9,11 +9,10 @@ from cv2 import CAP_VFW
 import numpy as np
 import os 
 
-from file_selector import file_select 
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('E:/BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml')
-cascadePath = "E:/BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml"
+recognizer.read("src/trainer/trainer.yml")
+cascadePath = "src/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath);
 
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -34,7 +33,7 @@ minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
 while(True):
     ret, img =cam.read()
-    cv2.imshow('frame', img)
+    cv2.imshow('Emotion Detector', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 #pic=file_select()
@@ -65,7 +64,7 @@ for(x,y,w,h) in faces:
 f = open("result.txt", "w")
 f.write(str(id))
 f.close()
-cv2.imwrite("E:/BTech/S6/Mini Project/Music Recommendation System/Emotion-Detection-Using-Facial-Recognition/src/generated_pic.jpg",img) 
+cv2.imwrite("src/generated_pic.jpg",img) 
 
 print("\n [INFO] Done detecting and Image is saved")
 cam.release()
