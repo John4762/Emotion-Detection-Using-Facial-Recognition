@@ -9,15 +9,15 @@ import os
 Builder.load_file('graphics.kv')
 
 class ScreenOne(Screen):
+	def callback(self,instance):
+		os.system('python E:/BTech/S6/MP/Music_Recomendation_System/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
+	
 	def __init__(self,**kwargs):
 		super(ScreenOne, self).__init__(**kwargs)
 		mybutton = Button(text = "Submit")
 		mybutton.bind(on_release = self.callback) 
 		self.add_widget(mybutton)
-		
-	def callback(self,instance):
-		os.system('python E:/BTech/S6/MP/Music_Recomendation_System/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
-		pass
+
 	pass
 
 class ScreenTwo(Screen):
