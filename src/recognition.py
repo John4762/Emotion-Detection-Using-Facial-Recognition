@@ -24,10 +24,11 @@ id = 0
 names = ['Happy', 'Sad'] 
 
 # Initialize and start realtime video capture
-cam = cv2.VideoCapture(1)
+print("1")
+cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video widht
 cam.set(4, 480) # set video height
-
+print("2")
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
@@ -37,6 +38,7 @@ while(True):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 #pic=file_select()
+print("3")
 #img = cv2.imread(pic)
 #img = cv2.flip(img, -1) # Flip vertically
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
