@@ -17,11 +17,11 @@ pattern = "*.mp3"
 
 mixer.init()
 
-prev_img = tk.PhotoImage(file = "music app/prev_img.png")
-stop_img = tk.PhotoImage(file = "music app/stop_img.png")
-play_img = tk.PhotoImage(file = "music app/play_img.png")
-next_img = tk.PhotoImage(file = "music app/next_img.png")
-pause_img = tk.PhotoImage(file = "music app/pause_img.png")
+prev_img = tk.PhotoImage(file = "music_app/prev_img.png")
+stop_img = tk.PhotoImage(file = "music_app/stop_img.png")
+play_img = tk.PhotoImage(file = "music_app/play_img.png")
+next_img = tk.PhotoImage(file = "music_app/next_img.png")
+pause_img = tk.PhotoImage(file = "music_app/pause_img.png")
 
 
     
