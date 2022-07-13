@@ -36,14 +36,20 @@
 
 <ScreenThree>:
 	BoxLayout:
-		Button:
-			text: "Go to Screen 4"
-			background_color : 1, 0, 1, 1
-			on_press:
-				root.manager.transition.direction = 'left'
-				root.manager.transition.duration = 1
-				root.manager.current = 'screen_four'
-
+	    orientation: 'vertical'
+		padding: 200
+		BoxLayout:
+		    height: "60dp"
+            size_hint_y: None
+            Button:
+                size_hint_x: 2
+				text: "See Playlist"
+				background_color: 1, 0, 1, 1
+			    bold: True
+				on_press:
+				    root.manager.transition.direction = 'left'
+				    root.manager.transition.duration = 1
+				    root.manager.current = 'screen_four'
 
 <ScreenFour>:
 	BoxLayout:
