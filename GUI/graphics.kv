@@ -1,13 +1,29 @@
 <ScreenOne>:
 	BoxLayout:
-		Button:
-			text: "Submit"
-			background_color : 0, 0, 1, 1
-			on_press:
-				root.callback()
-				root.manager.transition.direction = 'left'
-				root.manager.transition.duration = 1
-				root.manager.current = 'screen_two'
+	    orientation: 'vertical'
+		padding: 200
+		spacing: 50
+	    Image:
+		    source: 'logo.png.png'
+			size_hint_x: 1
+			size_hint_y: 2.5
+			width: 50
+			height: 50
+			allow_stretch: True
+		BoxLayout:
+            height: "60dp"
+            size_hint_y: None
+            Button:
+                size_hint_x: 2
+				text: "Click to take a Picture!"
+				background_color: 1, 0, 1, 1
+			    bold: True
+				on_press:
+				    root.callback()
+				    root.manager.transition.direction = 'left'
+				    root.manager.transition.duration = 1
+				    root.manager.current = 'screen_two'	
+			
 <ScreenTwo>:
 	BoxLayout:
 		Button:
