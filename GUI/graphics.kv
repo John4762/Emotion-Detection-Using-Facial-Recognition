@@ -1,8 +1,9 @@
 <ScreenOne>:
 	BoxLayout:
 		Image:
-			source: 'img1.jpg'
+			source: 'noteimg.png'
 			allow_stretch: True
+			size_hint_y: 1.2
 	BoxLayout:
 	    orientation: 'vertical'
 		padding: 200
@@ -39,6 +40,11 @@
 				root.manager.current = 'screen_three'
 
 <ScreenThree>:
+    BoxLayout:
+		Image:
+			source: 'noteimg.png'
+			allow_stretch: True
+			size_hint_y: 1.2
 	BoxLayout:
 	    orientation: 'vertical'
 		padding: 200
