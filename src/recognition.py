@@ -37,6 +37,7 @@ while(True):
     cv2.imshow('Emotion Detector', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+cv2.imwrite("src/plainpic.jpg",img)    
 #pic=file_select()
 print("3")
 #img = cv2.imread(pic)

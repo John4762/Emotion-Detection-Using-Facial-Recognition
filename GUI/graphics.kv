@@ -30,18 +30,53 @@
 			
 <ScreenTwo>:
 	BoxLayout:
-		Button:
-			text: "Go to Screen 3"
-			background_color : 1, 1, 0, 1
-			on_press:
-				root.manager.transition.direction = 'left'
-				root.manager.transition.duration = 1
-				root.manager.current = 'screen_three'
-
-<ScreenThree>:
+	    orientation: 'vertical'
+		padding: 300
+		spacing: 50
+	    Image:
+		    source: 'src/plainpic.jpg'
+			size_hint_x: 1
+			size_hint_y: 2.5
+			width: 50
+			height: 50
+			allow_stretch: True
 	BoxLayout:
 	    orientation: 'vertical'
 		padding: 200
+		spacing: 50
+		BoxLayout:
+			height: "60dp"
+			size_hint_y: None
+			Button:
+				size_hint_x: 2
+				text: "Retake Picture"
+				background_color: 1, 0, 1, 1
+				bold: True
+				on_press:
+					root.callback()
+					root.manager.transition.direction = 'left'
+					root.manager.transition.duration = 1
+					root.manager.current = 'screen_two'
+			Button:
+				size_hint_x: 2
+				text: "Show Emotion"
+				background_color: 1, 0, 1, 1
+				bold: True
+				on_press:
+					root.manager.transition.direction = 'left'
+					root.manager.transition.duration = 1
+					root.manager.current = 'screen_three'		
+			
+
+
+<ScreenThree>:
+	BoxLayout:
+		Image:
+			source: 'src/generated_pic.jpg'
+			allow_stretch: True
+	BoxLayout:
+	    orientation: 'vertical'
+		padding: 50
 		BoxLayout:
 		    height: "60dp"
             size_hint_y: None
@@ -51,6 +86,7 @@
 				background_color: 1, 0, 1, 1
 			    bold: True
 				on_press:
+					root.musicplayer()
 				    root.manager.transition.direction = 'left'
 				    root.manager.transition.duration = 1
 				    root.manager.current = 'screen_four'

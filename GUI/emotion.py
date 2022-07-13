@@ -24,7 +24,7 @@ class Button_Widget(Widget):
 		self.add_widget(btn1)
 
 	def callback(self, instance):
-		os.system('python E:/BTech/S6/MP/Music_Recomendation_System/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
+		os.system('python C:/Users/hp/OneDrive/Desktop/MiniProject/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
 
 class ButtonApp(App):
 

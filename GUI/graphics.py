@@ -13,13 +13,20 @@ Builder.load_file('graphics.kv')
 class ScreenOne(Screen):
 
 	def callback(self):
-		os.system('python E:/BTech/S6/MP/Music_Recomendation_System/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
+		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
 	pass
 
 class ScreenTwo(Screen):
+	def callback(self):
+		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
+
+	def showemotion(self):
+		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/src/display.py')	
 	pass
 
 class ScreenThree(Screen):
+	def musicplayer(self):
+		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/music_app/main.py')		
 	pass
 
 class ScreenFour(Screen):
