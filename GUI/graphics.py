@@ -13,20 +13,22 @@ Builder.load_file('graphics.kv')
 class ScreenOne(Screen):
 
 	def callback(self):
-		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
+		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')
 	pass
 
 class ScreenTwo(Screen):
 	def callback(self):
-		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/src/recognition.py')
+		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')
 
 	def showemotion(self):
-		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/src/display.py')	
+		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')	
+	def callemotion(self):
+		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/display.py')
 	pass
 
 class ScreenThree(Screen):
 	def musicplayer(self):
-		os.system('python C:/Users/hp/OneDrive/Desktop\MiniProject/Emotion-Detection-Using-Facial-Recognition/music_app/main.py')		
+		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/music_app/main.py')		
 	pass
 
 class ScreenFour(Screen):

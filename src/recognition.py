@@ -1,3 +1,4 @@
+from tkinter import Image
 import cv2
 from cv2 import CAP_DSHOW
 from cv2 import CAP_ANDROID
@@ -6,6 +7,7 @@ from cv2 import CAP_FFMPEG
 from cv2 import CAP_IMAGES
 from cv2 import CAP_OPENCV_MJPEG
 from cv2 import CAP_VFW
+import PIL.Image
 import numpy as np
 import os 
 
@@ -64,9 +66,14 @@ for(x,y,w,h) in faces:
         confidence = "  {0}%".format(round(100 - confidence))
     
     cv2.putText(img, str(id), (x+5,y+15), font, 1, (255,255,255), 2)
-f = open("result.txt", "w")
-f.write(str(id))
-f.close()
+# f = open("result.txt", "w")
+# f.write(str(id))
+# f.close()
+# fp = open('C:/Users/Dell/Desktop/emotion/Emotion_detection/src/happy.jpg',"rb")
+# image = PIL.Image.open(fp)
+# image = Image.open('C:/Users/Dell/Desktop/emotion/Emotion_detection/srchappy.jpg')
+# if str(id)=="Happy":
+#     cv2.imwrite("src/emotion_pic.jpg",image)
 cv2.imwrite("src/generated_pic.jpg",img) 
 
 print("\n [INFO] Done detecting and Image is saved")

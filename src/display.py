@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 #pic=file_select()
 #image = cv2.imread(pic)
-image = cv2.imread("src/generated_pic.jpg")
+image = cv2.imread("src/emotion_pic.jpg")
 height, width = image.shape[:2]
 resized_image = cv2.resize(image,(3*width, 3*height), interpolation = cv2.INTER_CUBIC)
 
