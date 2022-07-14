@@ -27,14 +27,15 @@
 				    root.callback()
 				    root.manager.transition.direction = 'left'
 				    root.manager.transition.duration = 1
-				    root.manager.current = 'screen_two'			
+				    root.switch_screen()		
 <ScreenTwo>:
 	BoxLayout:
 	    orientation: 'vertical'
 		padding: 100
 		spacing: 50
 	    Image:
-		    source: 'src/plainpic.jpg'
+			id: img_label
+		    #source: 'src/plainpic.jpg'
 			size_hint_x: 1
 			size_hint_y: 2.5
 			width: 100
@@ -65,10 +66,11 @@
 				background_color: 1, 0, 1, 1
 				bold: True
 				on_press:
-					root.callemotion()
+					# root.callemotion()
 					root.manager.transition.direction = 'left'
 					root.manager.transition.duration = 1
-					root.manager.current = 'screen_three'	
+					root.switch_screen()
+					#root.manager.current = 'screen_three'	
 	
 <ScreenThree>:
     BoxLayout:
@@ -85,6 +87,14 @@
 		    size_hint_y: None
 		    Label:
 				text:'Emotion detected is:'
+				font_size: 25
+			Label:
+				
+				id: emotion_label
+				text:''
+				font_size: 25
+			
+				#self.bl1=self.ids['angrybirds']
 				#font_size: self.height/10
 				# background_color: 1, 0, 1, 1
 				# size_hint_x: 2

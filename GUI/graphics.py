@@ -14,24 +14,46 @@ class ScreenOne(Screen):
 
 	def callback(self):
 		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')
-	pass
+	def switch_screen(self):
+		screen_manager.switch_to(ScreenTwo(name ="screen_two"))
 
 class ScreenTwo(Screen):
+	global screen_manager
 	def callback(self):
 		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')
+	def switch_screen(self):
+		screen_manager.switch_to(ScreenThree(name ="screen_three"))
+	def on_pre_enter(self, *args):
+		lab=self.ids["img_label"]
+		lab.source='src/plainpic.jpg'
+		
 
 	def showemotion(self):
 		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')	
-	def callemotion(self):
-		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/display.py')
-	pass
-
+	
 class ScreenThree(Screen):
 	def musicplayer(self):
 		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/music_app/main.py')		
-	pass
+	def callemotion(self):
+		f = open("result.txt", "r")
+		emotion_result=f.read()
+		f.close()
+		print(emotion_result)
+
+		lab=self.ids["emotion_label"]
+		lab.text=emotion_result
+		# self.ids.emotion_label=emotion_result
+		# emotion_detected= self.ids.emoinput.txt
+		# print(emotion_detected)
+		#os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/display.py')
+	def on_enter(self, *args):
+		self.callemotion()
+		
+
+
 
 class ScreenFour(Screen):
+
 	pass
 
 class ScreenFive(Screen):
