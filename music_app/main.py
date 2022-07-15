@@ -91,10 +91,13 @@ top.pack(padx = 10, pady = 5, anchor = 'n')
 
 #em_entry = tk.Entry(canvas, font=('poppins',24), width =14,bg = 'grey', bd=7)
 #em_entry.pack(pady = 2, side = 'top')
-f = open("result.txt", "r")
+f = open("result.txt", "r+")
 emotion_result=f.read()
+f.truncate(0)
 f.close()
-emoButton = tk.Button(canvas, text=emotion_result,font = ('poppins', 14), bg = 'blue', borderwidth = 5, command = button_command )
+
+##8a28d73
+emoButton = tk.Button(canvas, text=emotion_result,font = ('poppins', 14), bg = '#8a28d7', borderwidth = 5, command = button_command )
 emoButton.pack(pady = 10, side = 'top')
 
 prevButton = tk.Button(canvas, image = prev_img, bg = 'black', borderwidth = 0, command = prev)
@@ -112,9 +115,9 @@ playButton.pack(pady = 15, in_ = top, side = 'left')
 nextButton = tk.Button(canvas,  image = next_img, bg = 'black', borderwidth = 0, command = next)
 nextButton.pack(pady = 15, in_ = top, side = 'left')
 
-listBox = tk.Listbox(canvas, fg = "yellow", bg = "purple", width = 300, font = ('poppins', 14))
+listBox = tk.Listbox(canvas, fg = "#8a28d7", bg = "black", width = 300, font = ('poppins', 14),borderwidth= 0,highlightthickness=0)
 listBox.pack(padx = 15, pady = 10)
-label = tk.Label(canvas, text = '', bg = "black", fg = "cyan", font = ('poppins', 14))
+label = tk.Label(canvas, text = '', bg = "black", fg = "white", font = ('Helvetica', 14))
 label.pack(pady = 15)
 
 canvas.mainloop()

@@ -13,14 +13,14 @@ Builder.load_file('graphics.kv')
 class ScreenOne(Screen):
 
 	def callback(self):
-		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')
+		os.system('python src/recognition.py')
 	def switch_screen(self):
 		screen_manager.switch_to(ScreenTwo(name ="screen_two"))
 
 class ScreenTwo(Screen):
 	global screen_manager
 	def callback(self):
-		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')
+		os.system('python src/recognition.py')
 	def switch_screen(self):
 		screen_manager.switch_to(ScreenThree(name ="screen_three"))
 	def on_pre_enter(self, *args):
@@ -29,11 +29,11 @@ class ScreenTwo(Screen):
 		
 
 	def showemotion(self):
-		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/recognition.py')	
+		os.system('python src/recognition.py')	
 	
 class ScreenThree(Screen):
 	def musicplayer(self):
-		os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/music_app/main.py')		
+		os.system('python music_app/main.py')		
 	def callemotion(self):
 		f = open("result.txt", "r")
 		emotion_result=f.read()
@@ -45,7 +45,7 @@ class ScreenThree(Screen):
 		# self.ids.emotion_label=emotion_result
 		# emotion_detected= self.ids.emoinput.txt
 		# print(emotion_detected)
-		#os.system('python C:/Users/Dell/Desktop/emotion/Emotion_detection/src/display.py')
+		#os.system('python C:/Users/hp/OneDrive/Desktop/MiniProject/Emotion-Detection-Using-Facial-Recognition/src/display.py')
 	def on_enter(self, *args):
 		self.callemotion()
 		
