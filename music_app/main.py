@@ -7,7 +7,7 @@ from pygame import mixer
 
 canvas = tk.Tk()
 canvas.title("Music Player")
-canvas.geometry("1600x1000")
+canvas.geometry("700x550")
 canvas.config(bg = 'black')
 rootpath=''
 
@@ -101,19 +101,19 @@ emoButton = tk.Button(canvas, text=emotion_result,font = ('poppins', 14), bg = '
 emoButton.pack(pady = 10, side = 'top')
 
 prevButton = tk.Button(canvas, image = prev_img, bg = 'black', borderwidth = 0, command = prev)
-prevButton.pack(pady = 15, in_ = top, side = 'left')
+prevButton.pack(pady = 15, in_ = top, side = 'left',padx=10)
 
 stopButton = tk.Button(canvas, image = stop_img, bg = 'black', borderwidth = 0, command = stop)
-stopButton.pack(pady = 15, in_ = top, side = 'left')
+stopButton.pack(pady = 15, in_ = top, side = 'left',padx=10)
 
 pauseButton = tk.Button(canvas, image = pause_img, text="Pause", bg = 'black', borderwidth = 0, command = pause)
-pauseButton.pack(pady = 15, in_ = top, side = 'left')
+pauseButton.pack(pady = 15, in_ = top, side = 'left',padx=10)
 
 playButton = tk.Button(canvas, image = play_img, bg = 'black', borderwidth = 0, command = select)
-playButton.pack(pady = 15, in_ = top, side = 'left')
+playButton.pack(pady = 15, in_ = top, side = 'left',padx=10)
 
 nextButton = tk.Button(canvas,  image = next_img, bg = 'black', borderwidth = 0, command = next)
-nextButton.pack(pady = 15, in_ = top, side = 'left')
+nextButton.pack(pady = 15, in_ = top, side = 'left',padx=10)
 
 listBox = tk.Listbox(canvas, fg = "#8a28d7", bg = "black", width = 300, font = ('poppins', 14),borderwidth= 0,highlightthickness=0)
 listBox.pack(padx = 15, pady = 10)
