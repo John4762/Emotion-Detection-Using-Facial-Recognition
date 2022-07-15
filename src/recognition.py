@@ -27,7 +27,7 @@ names = ['Happy', 'Sad']
 
 # Initialize and start realtime video capture
 print("1")
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 cam.set(3, 640) # set video widht
 cam.set(4, 480) # set video height
 print("2")

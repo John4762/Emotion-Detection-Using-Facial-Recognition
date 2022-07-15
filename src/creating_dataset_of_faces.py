@@ -1,6 +1,6 @@
 import cv2
 
-with open('src/happy.txt','r') as f:
+with open('src/sad.txt','r') as f:
     images = [line.strip() for line in f]
 
 face_detector = cv2.CascadeClassifier('src/haarcascade_frontalface_default.xml')
@@ -11,7 +11,7 @@ face_id = input('\n Enter Emotion id end press <return> ==>  ')
 count = 0
 
 for image in images:
-    img = cv2.imread("src/data_set/happy/"+image)
+    img = cv2.imread("src/data_set/sad/"+image)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_detector.detectMultiScale(gray, 1.3, 5)
 
