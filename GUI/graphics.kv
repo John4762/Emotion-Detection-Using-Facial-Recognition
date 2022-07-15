@@ -51,16 +51,17 @@
 			size_hint_y: None
 			pos: '10dp','10dp'
 			#pos_hint: {'x':0 , 'y':0 }
-			Button:
-				size_hint_x: 2
-				text: "Retake Picture"
-				background_color: 1, 0, 1, 1
-				bold: True
-				on_press:
-					root.callback()
-					root.manager.transition.direction = 'left'
-					root.manager.transition.duration = 1
-					root.manager.current = 'screen_two'
+			# Button:
+			# 	size_hint_x: 2
+			# 	text: "Retake Picture"
+			# 	background_color: 1, 0, 1, 1
+			# 	bold: True
+			# 	on_press:
+			# 		root.callback()
+			# 		root.manager.transition.direction = 'right'
+			# 		root.manager.transition.duration = 1
+			# 		root.manager.current = 'screen_two'
+					
 			Button:
 				size_hint_x: 2
 				text: "Show Emotion"
@@ -115,23 +116,40 @@
 					root.musicplayer()
 				    root.manager.transition.direction = 'left'
 				    root.manager.transition.duration = 1
-				    root.manager.current = 'screen_four'
-
-<ScreenFour>:
-	BoxLayout:
-		Button:
-			text: "Go to Screen 5"
-			background_color : 0, 1, 1, 1
-			on_press:
-				root.manager.transition.direction = 'left'
-				root.manager.transition.duration = 1
-				root.manager.current = 'screen_five'
+				    root.manager.current = 'screen_five'
 
 <ScreenFive>:
 	BoxLayout:
-		Button:
-			text: "Go to Screen 1"
-			background_color : 1, 0, 0, 1
-			on_release:
-				root.manager.transition.direction = 'right'
-				root.manager.current = 'screen_one'
+	    orientation: 'vertical'
+		padding: 100
+		spacing: 50
+	# BoxLayout:
+	#     orientation: 'vertical'
+	# 	padding: 200
+	# 	spacing: 50
+		BoxLayout:
+			height: "60dp"
+			size_hint_y: None
+			pos: '10dp','10dp'
+			#pos_hint: {'x':0 , 'y':0 }
+			#new img not accepted:(
+			# Button:
+            #     size_hint_x: 2
+			# 	text: "Home"
+			# 	background_color: 1, 0, 1, 1
+			#     bold: True
+			# 	on_press:
+			# 	    root.manager.transition.direction = 'right'
+			# 		root.manager.transition.duration = 1
+			# 		root.switch_screen()		
+			Button:
+				
+				text: "QUIT"
+				background_color: 1, 0, 1, 1
+				size_hint: .45, .45
+        		pos: 100, 500
+				bold: True
+				on_press:
+					app.Exit()
+					
+

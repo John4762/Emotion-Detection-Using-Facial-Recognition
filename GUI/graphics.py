@@ -21,6 +21,10 @@ class ScreenTwo(Screen):
 	global screen_manager
 	def callback(self):
 		os.system('python src/recognition.py')
+	# def switch_screen1(self):
+	# 	screen_manager.switch_to(ScreenTwo(name ="screen_one"))
+
+		#screen_manager.switch_to(ScreenThree(name ="screen_three"))
 	def switch_screen(self):
 		screen_manager.switch_to(ScreenThree(name ="screen_three"))
 	def on_pre_enter(self, *args):
@@ -49,21 +53,16 @@ class ScreenThree(Screen):
 	def on_enter(self, *args):
 		self.callemotion()
 		
-
-
-
-class ScreenFour(Screen):
-
-	pass
-
 class ScreenFive(Screen):
+	def switch_screen(self):
+		screen_manager.switch_to(ScreenOne(name ="screen_one"))
+
 	pass
 
 screen_manager = ScreenManager()
 screen_manager.add_widget(ScreenOne(name ="screen_one")) 
 screen_manager.add_widget(ScreenTwo(name ="screen_two"))
 screen_manager.add_widget(ScreenThree(name ="screen_three"))
-screen_manager.add_widget(ScreenFour(name ="screen_four"))
 screen_manager.add_widget(ScreenFive(name ="screen_five"))
 
 class ScreenApp(App):
