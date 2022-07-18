@@ -1,16 +1,5 @@
-from tkinter import Image
 import cv2
-from cv2 import CAP_DSHOW
-from cv2 import CAP_ANDROID
-from cv2 import CAP_GPHOTO2
-from cv2 import CAP_FFMPEG
-from cv2 import CAP_IMAGES
-from cv2 import CAP_OPENCV_MJPEG
-from cv2 import CAP_VFW
-import PIL.Image
-import numpy as np
-import os 
-
+import numpy 
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("src/trainer/trainer.yml")
@@ -19,16 +8,17 @@ faceCascade = cv2.CascadeClassifier(cascadePath)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
-#iniciate id counter
+#initiate id counter
 id = 0
 
 # Emotions related to ids: example ==> Anger: id=0,  etc
 names = ['Happy', 'Sad'] 
 
 # Initialize and start realtime video capture
-cam = cv2.VideoCapture(1)
+cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video widht
 cam.set(4, 480) # set video height
+
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
@@ -37,10 +27,8 @@ while(True):
     cv2.imshow('Emotion Detector', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-cv2.imwrite("src/plainpic.jpg",img)    
-#pic=file_select()
-#img = cv2.imread(pic)
-#img = cv2.flip(img, -1) # Flip vertically
+cv2.imwrite("src/plainpic.jpg",img) 
+   
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 faces = faceCascade.detectMultiScale( 
@@ -66,11 +54,7 @@ for(x,y,w,h) in faces:
 f = open("result.txt", "w")
 f.write(str(id))
 f.close()
-# fp = open('C:/Users/Dell/Desktop/emotion/Emotion_detection/src/happy.jpg',"rb")
-# image = PIL.Image.open(fp)
-# image = Image.open('C:/Users/Dell/Desktop/emotion/Emotion_detection/srchappy.jpg')
-# if str(id)=="Happy":
-#     cv2.imwrite("src/emotion_pic.jpg",image)
+
 
 cv2.imwrite("src/generated_pic.jpg",img) 
 

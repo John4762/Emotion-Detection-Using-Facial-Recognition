@@ -8,6 +8,9 @@ face_detector = cv2.CascadeClassifier('src/haarcascade_frontalface_default.xml')
 # For each Emotion, enter one numeric face id
 face_id = input('\n Enter Emotion id end press <return> ==>  ')
 
+#0 for happy
+#1 for sad
+
 count = 0
 
 for image in images:
@@ -22,5 +25,3 @@ for image in images:
 
         # Save the captured image into the datasets folder
         cv2.imwrite("src/dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
-#0 for happy
-#1 for sad

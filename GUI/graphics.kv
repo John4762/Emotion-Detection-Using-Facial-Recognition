@@ -10,7 +10,7 @@
 		padding: 200
 		spacing: 50
 	    Image:
-		    source: 'logo.png.png'
+		    source: 'logo.png'
 			size_hint_x: 1
 			size_hint_y: 2.5
 			width: 50
@@ -86,10 +86,6 @@
 				id: emotion_label
 				text:''
 				font_size: 25
-			# 	on_press:
-			# 		emo=root.callemotion()
-			# # TextInput:
-			# 	text:emo
 		BoxLayout:
 		    height: "60dp"
             size_hint_y: None
@@ -122,7 +118,6 @@
 				size_hint_x:2
 				text: "QUIT"
 				background_color: 1, 0, 1, 1
-				#size_hint: .45, .45
         		pos: 100, 500
 				bold: True
 				on_press:
