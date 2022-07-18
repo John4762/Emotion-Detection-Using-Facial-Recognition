@@ -26,11 +26,9 @@ id = 0
 names = ['Happy', 'Sad'] 
 
 # Initialize and start realtime video capture
-print("1")
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 cam.set(3, 640) # set video widht
 cam.set(4, 480) # set video height
-print("2")
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
@@ -41,7 +39,6 @@ while(True):
         break
 cv2.imwrite("src/plainpic.jpg",img)    
 #pic=file_select()
-print("3")
 #img = cv2.imread(pic)
 #img = cv2.flip(img, -1) # Flip vertically
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

@@ -19,8 +19,8 @@ class ScreenOne(Screen):
 
 class ScreenTwo(Screen):
 	global screen_manager
-	def callback(self):
-		os.system('python src/recognition.py')
+	#def callback(self):
+		#os.system('python src/recognition.py')
 	# def switch_screen1(self):
 	# 	screen_manager.switch_to(ScreenTwo(name ="screen_one"))
 
@@ -32,8 +32,8 @@ class ScreenTwo(Screen):
 		lab.source='src/plainpic.jpg'
 		
 
-	def showemotion(self):
-		os.system('python src/recognition.py')	
+	#def showemotion(self):
+		#os.system('python src/recognition.py')	
 	
 class ScreenThree(Screen):
 	def musicplayer(self):
@@ -42,7 +42,7 @@ class ScreenThree(Screen):
 		f = open("result.txt", "r")
 		emotion_result=f.read()
 		f.close()
-		print(emotion_result)
+		#print(emotion_result)
 
 		lab=self.ids["emotion_label"]
 		lab.text=emotion_result
