@@ -4,10 +4,10 @@ from PIL import Image
 import os
 
 # Path for face image database
-path = 'C:/Users/Dell/Desktop/Emotion-Detection-Using-Facial-Recognition/src/dataset'
+path = "src/dataset"
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-detector = cv2.CascadeClassifier("C:/Users/Dell/Desktop/Emotion-Detection-Using-Facial-Recognition/src/haarcascade_frontalface_default.xml");
+detector = cv2.CascadeClassifier("src/haarcascade_frontalface_default.xml");
 
 # function to get the images and label data
 def getImagesAndLabels(path):
@@ -35,7 +35,7 @@ faces,ids = getImagesAndLabels(path)
 recognizer.train(faces, np.array(ids))
 
 # Save the model into trainer/trainer.yml
-recognizer.write('C:/Users/Dell/Desktop/Emotion-Detection-Using-Facial-Recognition/src/trainer/trainer.yml') 
+recognizer.write("src/trainer/trainer.yml") 
 
 # Print the numer of Emotions trained and end program
 print("\n [INFO] {0} Emotions trained. Exiting Program".format(len(np.unique(ids))))
